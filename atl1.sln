@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "atl1", "atl1\atl1.vcproj", "{0A94D583-4397-4240-AA79-5F8240568F6B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "atl1PS", "atl1\atl1PS.vcproj", "{D5531F08-1BAE-48BB-B484-0ABBA426E01E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A94D583-4397-4240-AA79-5F8240568F6B} = {0A94D583-4397-4240-AA79-5F8240568F6B}
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Atl1Setup", "Atl1Setup\Atl1Setup.vdproj", "{CDC623DA-B321-4608-A584-EA9D2CB9F8DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A94D583-4397-4240-AA79-5F8240568F6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0A94D583-4397-4240-AA79-5F8240568F6B}.Debug|Win32.Build.0 = Debug|Win32
+		{0A94D583-4397-4240-AA79-5F8240568F6B}.Release|Win32.ActiveCfg = Release|Win32
+		{0A94D583-4397-4240-AA79-5F8240568F6B}.Release|Win32.Build.0 = Release|Win32
+		{D5531F08-1BAE-48BB-B484-0ABBA426E01E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5531F08-1BAE-48BB-B484-0ABBA426E01E}.Release|Win32.ActiveCfg = Release|Win32
+		{CDC623DA-B321-4608-A584-EA9D2CB9F8DA}.Debug|Win32.ActiveCfg = Debug
+		{CDC623DA-B321-4608-A584-EA9D2CB9F8DA}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

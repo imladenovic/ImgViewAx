@@ -1,0 +1,9 @@
+; atl1.def : Declares the module parameters.
+
+LIBRARY      "atl1.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

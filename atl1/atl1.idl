@@ -1,0 +1,43 @@
+// atl1.idl : IDL source for atl1
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (atl1.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(B218BAED-E7EF-4372-AF99-55FA1400755A),
+	dual,
+	nonextensible,
+	helpstring("Iimgx Interface"),
+	pointer_default(unique)
+]
+interface Iimgx : IDispatch{
+	[id(1), helpstring("method jht")] HRESULT jht(void);
+	[id(2), helpstring("method OpenImage")] HRESULT OpenImage(void);
+	[id(3), helpstring("method print")] HRESULT print(void);
+	[id(4), helpstring("method print2")] HRESULT print2(void);
+};
+
+[
+	uuid(50D524C9-4AB0-4E8D-B4B5-898AFA382F6C),
+	version(1.0),
+	helpstring("atl1 1.0 Type Library")
+]
+library atl1Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(28B7719A-2DBF-4956-A704-5AB4FD59B5F4),
+		control,
+		helpstring("imgx Class")
+	]
+	coclass imgx
+	{
+		[default] interface Iimgx;
+	};
+};
