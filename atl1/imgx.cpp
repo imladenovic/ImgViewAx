@@ -25,7 +25,9 @@ LRESULT Cimgx::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 STDMETHODIMP Cimgx::OpenImage(void)
 {
 	// TODO: Add your implementation code here
-	CFileDialog dlg(TRUE, _T("bmp"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, _T("Bitmap Files (*.bmp)\0*.bmp\0All Files (*.*)\0*.*\0"), m_hWnd);
+	//(all supported image files (*. Jpg; *. Gif; *. Bmp; ...) | *. Jpg; *. Gif; *. Bmp | TIFF image file (*. Tiff; * tif) | * TIFF; *. tif | | "
+	//(all supported image files (*. Jpg; *. Gif; *. Bmp; ...) | *. Jpg; *. Gif; *. Bmp | TIFF image file (*. Tiff; * tif) | * TIFF; *. tif | | "
+	CFileDialog dlg(TRUE, _T("bmp"), NULL, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, _T("Image Files (*. jpg; *. gif; *. bmp; ...)| *.jpg; *.gif; *.bmp| TIFF image file (*. Tiff; * tif) | * TIFF; *. tif | All Files (*.*)|*.*"), m_hWnd);
 	if(dlg.DoModal() == IDOK)
 	{
 #ifndef _WIN32_WCE
