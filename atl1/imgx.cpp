@@ -21,12 +21,6 @@ LRESULT Cimgx::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 	return 0;
 }
 
-STDMETHODIMP Cimgx::jht(void)
-{
-	// TODO: Add your implementation code here
-	
-	return S_OK;
-}
 
 STDMETHODIMP Cimgx::OpenImage(void)
 {

@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Apr 10 22:31:38 2015
+/* at Sun Apr 12 14:12:26 2015
  */
 /* Compiler settings for atl1.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 

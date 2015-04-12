@@ -186,7 +186,6 @@ public:
 	{
 	}
 	LRESULT OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
-	STDMETHOD(jht)(void);
 	STDMETHOD(OpenImage)(void);
 	LRESULT OnSize(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
 	STDMETHOD(print)(void);

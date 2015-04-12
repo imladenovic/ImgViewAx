@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Apr 10 22:31:38 2015
+/* at Sun Apr 12 14:12:26 2015
  */
 /* Compiler settings for atl1.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -88,8 +88,6 @@ EXTERN_C const IID IID_Iimgx;
     Iimgx : public IDispatch
     {
     public:
-        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE jht( void) = 0;
-        
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE OpenImage( void) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE print( void) = 0;
@@ -154,9 +152,6 @@ EXTERN_C const IID IID_Iimgx;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *jht )( 
-            Iimgx * This);
-        
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *OpenImage )( 
             Iimgx * This);
         
@@ -201,9 +196,6 @@ EXTERN_C const IID IID_Iimgx;
 #define Iimgx_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
-
-#define Iimgx_jht(This)	\
-    ( (This)->lpVtbl -> jht(This) ) 
 
 #define Iimgx_OpenImage(This)	\
     ( (This)->lpVtbl -> OpenImage(This) ) 

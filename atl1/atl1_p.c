@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Apr 10 22:31:38 2015
+/* at Sun Apr 12 14:12:26 2015
  */
 /* Compiler settings for atl1.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -50,7 +50,7 @@
 #include "atl1.h"
 
 #define TYPE_FORMAT_STRING_SIZE   3                                 
-#define PROC_FORMAT_STRING_SIZE   89                                
+#define PROC_FORMAT_STRING_SIZE   67                                
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -108,7 +108,7 @@ static const atl1_MIDL_PROC_FORMAT_STRING atl1__MIDL_ProcFormatString =
         0,
         {
 
-	/* Procedure jht */
+	/* Procedure OpenImage */
 
 			0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
@@ -127,7 +127,7 @@ static const atl1_MIDL_PROC_FORMAT_STRING atl1__MIDL_ProcFormatString =
 /* 20 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure OpenImage */
+	/* Procedure print */
 
 /* 22 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
@@ -146,7 +146,7 @@ static const atl1_MIDL_PROC_FORMAT_STRING atl1__MIDL_ProcFormatString =
 /* 42 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure print */
+	/* Procedure print2 */
 
 /* 44 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
@@ -163,25 +163,6 @@ static const atl1_MIDL_PROC_FORMAT_STRING atl1__MIDL_ProcFormatString =
 /* 60 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 62 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
 /* 64 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
-
-	/* Procedure print2 */
-
-/* 66 */	0x33,		/* FC_AUTO_HANDLE */
-			0x6c,		/* Old Flags:  object, Oi2 */
-/* 68 */	NdrFcLong( 0x0 ),	/* 0 */
-/* 72 */	NdrFcShort( 0xa ),	/* 10 */
-/* 74 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 76 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 78 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 80 */	0x4,		/* Oi2 Flags:  has return, */
-			0x1,		/* 1 */
-
-	/* Return value */
-
-/* 82 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 84 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 86 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -219,8 +200,7 @@ static const unsigned short Iimgx_FormatStringOffsetTable[] =
     (unsigned short) -1,
     0,
     22,
-    44,
-    66
+    44
     };
 
 static const MIDL_STUBLESS_PROXY_INFO Iimgx_ProxyInfo =
@@ -244,7 +224,7 @@ static const MIDL_SERVER_INFO Iimgx_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(11) _IimgxProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(10) _IimgxProxyVtbl = 
 {
     &Iimgx_ProxyInfo,
     &IID_Iimgx,
@@ -255,7 +235,6 @@ CINTERFACE_PROXY_VTABLE(11) _IimgxProxyVtbl =
     0 /* IDispatch::GetTypeInfo */ ,
     0 /* IDispatch::GetIDsOfNames */ ,
     0 /* IDispatch_Invoke_Proxy */ ,
-    (void *) (INT_PTR) -1 /* Iimgx::jht */ ,
     (void *) (INT_PTR) -1 /* Iimgx::OpenImage */ ,
     (void *) (INT_PTR) -1 /* Iimgx::print */ ,
     (void *) (INT_PTR) -1 /* Iimgx::print2 */
@@ -270,7 +249,6 @@ static const PRPC_STUB_FUNCTION Iimgx_table[] =
     STUB_FORWARDING_FUNCTION,
     NdrStubCall2,
     NdrStubCall2,
-    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -278,7 +256,7 @@ CInterfaceStubVtbl _IimgxStubVtbl =
 {
     &IID_Iimgx,
     &Iimgx_ServerInfo,
-    11,
+    10,
     &Iimgx_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };

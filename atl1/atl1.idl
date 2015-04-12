@@ -17,7 +17,6 @@ import "ocidl.idl";
 	pointer_default(unique)
 ]
 interface Iimgx : IDispatch{
-	[id(1), helpstring("method jht")] HRESULT jht(void);
 	[id(2), helpstring("method OpenImage")] HRESULT OpenImage(void);
 	[id(3), helpstring("method print")] HRESULT print(void);
 	[id(4), helpstring("method print2")] HRESULT print2(void);
