@@ -32,7 +32,13 @@ STDMETHODIMP Cimgx::OpenImage(void)
 		/*if(m_bPrintPreview)
 			TogglePrintPreview(); */
 		bitmapFile = dlg.m_szFileName;
-		HBITMAP hBmp = (HBITMAP)::LoadImage(NULL, dlg.m_szFileName, IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR | LR_LOADFROMFILE);
+
+		//Gdi+ magic
+		Bitmap mBitmap(bitmapFile,false);
+		HBITMAP hBmp;
+		mBitmap.GetHBITMAP(0x00000000, &hBmp);
+
+		//HBITMAP hBmp = (HBITMAP)::LoadImage(NULL, dlg.m_szFileName, IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR | LR_LOADFROMFILE);
 #else
 		// Using alternate image load routines here since LR_LOADFROMFILE isn't supported.
 #ifdef WIN32_PLATFORM_PSPC
@@ -88,6 +94,11 @@ LRESULT Cimgx::OnSize(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lParam, BOOL& /*b
 
 STDMETHODIMP Cimgx::print(void)
 {
+	if (bitmapFile.GetLength() == 0)
+	{
+		AtlMessageBox(m_hWnd, _T("No image loaded!")); 
+		return 0;
+	}
 	// TODO: Add your implementation code here
 	CPageSetupDialog printsetup;
 	printsetup.DoModal();
@@ -121,7 +132,12 @@ STDMETHODIMP Cimgx::print(void)
 			// LoadImage does the trick here, it creates a DIB section
 			// You can also use a resource here
 			// by using MAKEINTRESOURCE() ... etc. 
-			HBITMAP hBmp = (HBITMAP)::LoadImage(NULL,bitmapFile, IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR | LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_DEFAULTSIZE);
+
+			Bitmap mBitmap(bitmapFile, false);
+			HBITMAP hBmp;
+			mBitmap.GetHBITMAP(0x00000000, &hBmp);
+
+			//HBITMAP hBmp = (HBITMAP)::LoadImage(NULL,bitmapFile, IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR | LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_DEFAULTSIZE);
 			if(!bitmap.IsNull())
 				bitmap.DeleteObject();
 
@@ -162,6 +178,11 @@ STDMETHODIMP Cimgx::print(void)
 
 STDMETHODIMP Cimgx::print2(void)
 {
+	if (bitmapFile.GetLength() == 0)
+	{
+		AtlMessageBox(m_hWnd, _T("No image loaded!"));
+		return 0;
+	}
 	// TODO: Add your implementation code here
 	CPageSetupDialog printsetup;
 	printsetup.DoModal();

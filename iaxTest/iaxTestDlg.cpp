@@ -64,6 +64,7 @@ BEGIN_MESSAGE_MAP(CiaxTestDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON_LOAD, &CiaxTestDlg::OnBnClickedButtonLoad)
+	ON_BN_CLICKED(IDC_BUTTON_PRINT, &CiaxTestDlg::OnBnClickedButtonPrint)
 END_MESSAGE_MAP()
 
 
@@ -158,4 +159,11 @@ void CiaxTestDlg::OnBnClickedButtonLoad()
 {
 	// TODO: Add your control notification handler code here
 	m_iax.OpenImage();
+}
+
+
+void CiaxTestDlg::OnBnClickedButtonPrint()
+{
+	// TODO: Add your control notification handler code here
+	m_iax.print();
 }

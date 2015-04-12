@@ -45,11 +45,6 @@ public:
 
 // Functions
 //
-
-	void jht()
-	{
-		InvokeHelper(0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
-	}
 	void OpenImage()
 	{
 		InvokeHelper(0x2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);

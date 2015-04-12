@@ -34,4 +34,6 @@ public:
 	afx_msg void OnBnClickedButtonLoad();
 protected:
 	CImgx1 m_iax;
+public:
+	afx_msg void OnBnClickedButtonPrint();
 };

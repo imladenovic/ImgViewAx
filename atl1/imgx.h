@@ -4,6 +4,9 @@
 #include <atlctl.h>
 #include "atl1.h"
 #include "imageview.h"
+//using gdi+ lib
+#include "gdiplus.h"
+using namespace Gdiplus;
 
 
 
@@ -38,14 +41,29 @@ class ATL_NO_VTABLE Cimgx :
 	
 	
 {
+
+private:
+	//needed by Gdi+
+	ULONG_PTR gdiplusToken;
 public:
 
 
 	Cimgx()
 	{
 		m_bWindowOnly = TRUE;
-		
+		//gdi+ initialization
+		GdiplusStartupInput gdiplusStartupInput;
+		ULONG_PTR gdiplusToken;
+		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 	}
+
+	~Cimgx()
+	{
+		//gdiplus unload
+		GdiplusShutdown(gdiplusToken);
+	}
+
+
 
 DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
 	OLEMISC_CANTLINKINSIDE |
